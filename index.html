@@ -1,78 +1,58 @@
-export default function PortfolioSite() {
-    const navigationItems = [
-        { id: 'home', label: 'Home'},
-        { id: 'analysis', label: 'Analysis'},
-        { id: 'mp1', label: 'MP1'},
-        { id: 'mp2', label: 'MP2'},
-        { id: 'mp3', label: 'MP3'},
-        { id: 'professional', label: 'Professional Work'},
-    ];
-
-    const scrollToSection = (id) => {
-        const element = document.getElementById(id);
-        if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    };
-
-    return (
-        <div className="min-h-screen bg-neutral-950 text-neutral-100">
-            <header className="sticky top-0 z-50 border-b border-neutral-800 bg-neutral-950/90 backdrop-blur">
-                <div className="mx-auto flex max-w-6xl items-center justfy-between px-6 py-4">
-                    <div>
-                        <p className="text-sm uppercase tracking-[0.25em] text-neutral-400">LMC 3403 Portfolio</p>
-                        <h1 className="text-xl font-semibold">Kellen Madigan</h1>
-                    </div>
-                    <nav className="hidden gap-3 md:fkex">
-                        {navigationItems.map((item) => (
-                            <button
-                                key={item.id}
-                                onClick={() => scrollToSection(item.id)}
-                                className="rounded-full border border-neutral-700 px-4 py-2 text-sm text-neutral-200 transition hover:border-neutral-500 hover:bg-neutral-900"
-                            >
-                                {item.label}
-                            </button>
-                        ))}
-                    </nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LMC 3403 Final Portfolio | Kellen Madigan</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header">
+            <div class="container header-row">
+                <div>
+                    <p class="eyebrow muted">LMC 3403 Portfolio</p>
+                    <h1 class="site-title">Kellen Madigan</h1>
+                </div>
+                <nav class="site-nav">
+                    <a href="#home" class="nav-pill">Home</a>
+                    <a href="#analysis" class="nav-pill">Analysis</a>
+                    <a href="#mp1" class="nav-pill">MP1</a>
+                    <a href="#mp2" class="nav-pill">MP2</a>
+                    <a href="#mp3" class="nav-pill">MP3</a>
+                    <a href="#professional" class="nav-pill">Professional Work</a>
+                </nav>
             </div>
         </header>
 
-        <main className="mx-auto flex max-w-6xl flex-col gap-24 px-6 py-12">
-            <section id="home" className="grid gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-center">
-                <div className="space-y-6">
-                    <p className="text-sm uppercase tracking-[0.25em] text-cyan-300">Technical Communication in Practice</p>
-                    <h2 className="text-4xl font-bold leading-tight md:text-6xl">
+        <main class="container main-column">
+            <section id="home" class="hero-grid">
+                <div class="stack-large">
+                    <p class="eyebrow accent">Technical Communication in Practice</p>
+                    <h2 class="hero-title">
                         Building clearer communication for games, teams, and technical communities.
                     </h2>
-                    <p className="max-w-2xl text-lg leading-8 text-neutral-300">
+                    <p class="hero-copy">
                         I am a Georgia Tech student focused on computer science, game development, and design. In LMC 3403,
                         I used this semester to strengthen the way I communicate technical work across professional, public,
                         and collaborative contexts. This portfolio brings together my career materials, crisis communication
                         research, community training work for CECHE, and outside projects that connect directly to my long-term
                         interests in interactive media and development.
                     </p>
-                    <div className="flex flex-wrap gap-3">
-                        <button
-                            onClick={() => scrollToSection('analysis')}
-                            className="rounded-2xl bg-cyan-300 px-5 py-3 font-medium text-neutral-950 transition hover:opacity-90"
-                        >
-                            Read Analysis
-                        </button>
-                        <button
-                            onClick={() => scrollToSection('professional')}
-                            className="rounded-2xl border border-neutral-700 px-5 py-3 font-medium transition hover:border-neutral-500 hover:bg-neutral-900"
-                        >
-                            View Projects
-                        </button>
+                    <div class="button-row">
+                        <a href="#analysis" class="button button-primary">Read Analysis</a>
+                        <a href="#professional" class="button button-secondary">View Projects</a>
                     </div>
                 </div>
 
-                <div className="rounded-3xl border border-neutral-800 bg-gradient-to-br from-neutral-900 to-neutral-950 p-6 shadow-2xl">
-                    <div className="aspect-[4/5] rounded-2xl border border-dashed border-neutral-700 bg-neutral-900/60 p-6">
-                        <div className="flex h-full flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-950 p-6">
+                <div class="panel-card visual-outer">
+                    <div class="visual-frame">
+                        <div class="visual-inner">
                             <div>
-                                <p className="text-sm uppercase tracking-[0.25em] text-neutral-500">Visual Placeholder</p>
-                                <h3 className="mt-3 text-2xl font-semibold">Add a headshot, game screenshot, or personal graphic here</h3>
+                                <p class="eyebrow subtle">Visual Placeholder</p>
+                                <h3 class="panel-title">Add a headshot, game screenshot, or personal graphic here</h3>
                             </div>
-                            <p className="text-sm leading-6 text-neutral-400">
+                            <p class="visual-copy">
                                 PLACE HOLDER - LANDING PAGE STUFFF
                             </p>
                         </div>
@@ -80,13 +60,13 @@ export default function PortfolioSite() {
                 </div>
             </section>
 
-            <section id="analysis" className="space-y-6">
-                <div className="space-y-3">
-                    <p className="text-sm uppercase tracking-[0.25em] text-cyan-300">Self-Assessment Analysis</p>
-                    <h2 className="text-3xl font-bold md:text-4xl">Reflecting on growth across rhetoric, process, modes and media, and design</h2>
+            <section id="analysis" class="section-block">
+                <div class="stack-small">
+                    <p class="eyebrow accent">Self-Assessment Analysis</p>
+                    <h2 class="section-title">Reflecting on growth across rhetoric, process, modes and media, and design</h2>
                 </div>
-                <div className="rounded-3xl border border-neutral-800 bg-neutral-900/60 p-8 shadow-xl">
-                    <div className="prose prose-invert max-w-none prose-p:leading-8 prose-headings:text-white prose-strong:text-white">
+                <div class="panel-card longform-card">
+                    <div class="longform">
                         <p>
                             At the beginning of this course, one of my main goals was to become a stronger technical communicator in a way that would directly support my long-term interests in game development and game design. As someone who wants to work in spaces where technical ideas, creative direction, and collaboration constantly overlap, I wanted to improve at explaining complex work clearly, adapting communication for different audiences, and presenting technical material in a way that is usable rather than just informative. Over the course of the semester, I think my work in LMC 3403 helped me make clear progress toward that goal. Across my major projects, I became more aware of how communication choices shape the way people understand technical material, and I also became more intentional about revision, multimodality, and document design. Looking back at my portfolio as a whole, I believe my work shows growth in all four course outcomes: rhetoric, process, modes and media, and design.
                         </p>
@@ -118,20 +98,20 @@ export default function PortfolioSite() {
                 </div>
             </section>
 
-            <section id="mp1" className="space-y-6">
-                <div className="space-y-3">
-                    <p className="text-sm uppercase tracking-[0.25em] text-cyan-300">Major Project 1</p>
-                    <h2 className="text-3xl font-bold">Career Materials</h2>
+            <section id="mp1" class="section-block">
+                <div class="stack-small">
+                    <p class="eyebrow accent">Major Project 1</p>
+                    <h2 class="subsection-title">Career Materials</h2>
                 </div>
-                <div className="grid gap-6 md:grid-cols-[1fr_0.9fr]">
-                    <div className="rounded-3xl border border-neutral-800 bg-neutral-900/60 p-8">
-                        <p className="leading-8 text-neutral-300">
+                <div class="content-grid">
+                    <div class="panel-card">
+                        <p class="body-copy">
                             === 100 to 150 word introduction for MP1 ===
                         </p>
                     </div>
-                    <div className="rounded-3xl border border-dashed border-neutral-700 bg-neutral-950/70 p-8">
-                        <h3 className="text-xl font-semibold">Suggested assets</h3>
-                        <ul className="mt-4 space-y-3 text-neutral-300">
+                    <div class="panel-card dashed-card">
+                        <h3 class="asset-title">Suggested assets</h3>
+                        <ul class="asset-list">
                             <li>• Resume PDF embed or screenshot</li>
                             <li>• Cover letter excerpt</li>
                             <li>• Highlighted revision example</li>
@@ -141,20 +121,20 @@ export default function PortfolioSite() {
                 </div>
             </section>
 
-            <section id="mp2" className="space-y-6">
-                <div className="space-y-3">
-                    <p className="text-sm uppercase tracking-[0.25em] text-cyan-300">Major Project 2</p>
-                    <h2 className="text-3xl font-bold">Technical Crisis Report & Infographic</h2>
+            <section id="mp2" class="section-block">
+                <div class="stack-small">
+                    <p class="eyebrow accent">Major Project 2</p>
+                    <h2 class="subsection-title">Technical Crisis Report &amp; Infographic</h2>
                 </div>
-                <div className="grid gap-6 md:grid-cols-[1fr_0.9fr]">
-                    <div className="rounded-3xl border border-neutral-800 bg-neutral-900/60 p-8">
-                        <p className="leading-8 text-neutral-300">
+                <div class="content-grid">
+                    <div class="panel-card">
+                        <p class="body-copy">
                             === Replace with 100 to 150 word introduction for MP2 ===
                         </p>
                     </div>
-                    <div className="rounded-3xl border border-dashed border-neutral-700 bg-neutral-950/70 p-8">
-                        <h3 className="text-xl font-semibold">Suggested assets</h3>
-                        <ul className="mt-4 space-y-3 text-neutral-300">
+                    <div class="panel-card dashed-card">
+                        <h3 class="asset-title">Suggested assets</h3>
+                        <ul class="asset-list">
                             <li>• Final report PDF</li>
                             <li>• Infographic image</li>
                             <li>• Quote or excerpt from the report</li>
@@ -164,20 +144,20 @@ export default function PortfolioSite() {
                 </div>
             </section>
 
-            <section id="mp3" className="space-y-6">
-                <div className="space-y-3">
-                    <p className="text-sm uppercase tracking-[0.25em] text-cyan-300">Major Project 3</p>
-                    <h2 className="text-3xl font-bold">Community Training Materials for CECHE</h2>
+            <section id="mp3" class="section-block">
+                <div class="stack-small">
+                    <p class="eyebrow accent">Major Project 3</p>
+                    <h2 class="subsection-title">Community Training Materials for CECHE</h2>
                 </div>
-                <div className="grid gap-6 md:grid-cols-[1fr_0.9fr]">
-                    <div className="rounded-3xl border border-neutral-800 bg-neutral-900/60 p-8">
-                        <p className="leading-8 text-neutral-300">
+                <div class="content-grid">
+                    <div class="panel-card">
+                        <p class="body-copy">
                             === Replace with 100 to 150 word intro for MP3 ===
                         </p>
                     </div>
-                    <div className="rounded-3xl border border-dashed border-neutral-700 bg-neutral-950/70 p-8">
-                        <h3 className="text-xl font-semibold">Suggested assets</h3>
-                        <ul className="mt-4 space-y-3 text-neutral-300">
+                    <div class="panel-card dashed-card">
+                        <h3 class="asset-title">Suggested assets</h3>
+                        <ul class="asset-list">
                             <li>• Website or guide screenshots</li>
                             <li>• Recommendation report draft excerpt</li>
                             <li>• Team planning artifacts or mockups</li>
@@ -187,29 +167,29 @@ export default function PortfolioSite() {
                 </div>
             </section>
 
-            <section id="professional" className="space-y-10">
-                <div className="space-y-3">
-                    <p className="text-sm uppercase tracking-[0.25em] text-cyan-300">Professional Work</p>
-                    <h2 className="text-3xl font-bold md:text-4xl">Projects beyond LMC 3403</h2>
+            <section id="professional" class="section-block">
+                <div class="stack-small">
+                    <p class="eyebrow accent">Professional Work</p>
+                    <h2 class="section-title">Projects beyond LMC 3403</h2>
                 </div>
 
-                <div className="grid gap-6 md:grid-cols-2">
-                    <article className="rounded-3xl border border-neutral-800 bg-neutral-900/60 p-8">
-                        <h3 className="text-2xl font-semibold">Project One Placeholder</h3>
-                        <p className="mt-4 leading-8 text-neutral-300">
+                <div class="project-grid">
+                    <article class="panel-card">
+                        <h3 class="project-title">Project One Placeholder</h3>
+                        <p class="project-copy">
                             Replace with 100 to 150 word project introduction, probably for Quinn Signer development.
                         </p>
-                        <div className="mt-6 rounded-2xl border border-dashed border-neutral-700 bg-neutral-950/70 p-6 text-neutral-400">
+                        <div class="asset-placeholder">
                             Add screenshots, a demo link, diagrams, or UI mockups here.
                         </div>
                     </article>
 
-                    <article className="rounded-3xl border border-neutral-800 bg-neutral-900/60 p-8">
-                        <h3 className="text-2xl font-semibold">Project Two Placeholder</h3>
-                        <p className="mt-4 leading-8 text-neutral-300">
+                    <article class="panel-card">
+                        <h3 class="project-title">Project Two Placeholder</h3>
+                        <p class="project-copy">
                             Replace with 100 to 150 word project introduction, probably for leading 3 Sign Language Mobile Games.
                         </p>
-                        <div className="mt-6 rounded-2xl border border-dashed border-neutral-700 bg-neutral-950/70 p-6 text-neutral-400">
+                        <div class="asset-placeholder">
                             Add visuals, links, documentation excerpts, or presentation images somewhere about her.
                         </div>
                     </article>
@@ -217,11 +197,11 @@ export default function PortfolioSite() {
             </section>
         </main>
 
-        <footer className="border-t border-neutral-800 bg-neutral-950">
-            <div className="mx-auto max-w-6xl px-6 py-8 text-sm text-neutral-400">
+        <footer class="site-footer">
+            <div class="container footer-row">
                 <p>LMC 3403 Final Portfolio - Webpage | Kellen Madigan | GTID: 903721181</p>
             </div>
         </footer>
     </div>
-  );
-}
+</body>
+</html>
