@@ -30,11 +30,17 @@ body {
 }
 .headshot {
     display: block;
-    margin: 0 auto;
-    max-width: 100%;
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center 45%;
+    border-radius: 50%;
 }
-.contact-logo {
-    display:flexbox;
+.contact-logos {
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
     width: calc(var(--body-width) * .1);
     height: calc(var(--body-width) * .1);
